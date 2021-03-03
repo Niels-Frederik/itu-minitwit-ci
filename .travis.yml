@@ -57,10 +57,8 @@ jobs:
       install: skip
       # -o flag to get around "add ip to known hosts prompt"
       script: |
-        echo $MT_USER \
-        echo $MT_SERVER \
         ssh -o "StrictHostKeyChecking no" ${MT_USER}@${MT_SERVER} \
-        "source .profile && \
+        "source /root/.profile && \
         cd /vagrant && \
         docker-compose pull && \
         docker-compose up -d && \
